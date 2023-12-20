@@ -18,3 +18,20 @@ async function getData() {
   });
   return data;
 }
+
+export async function getStaticProps(context) {
+  const { params } = context;
+  const characterId = params?.charId;
+  const data = await getData();
+  const character = data?.allPeople.find((item) => item.id === characterId);
+
+  if (!character) {
+    return { notFound: true };
+  }
+
+  return {
+    props: {
+      characterDetails: character,
+    },
+  };
+}
