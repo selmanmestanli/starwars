@@ -35,3 +35,15 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+export async function getStaticPaths() {
+  const data = await getData();
+
+  const ids = data?.allPeople.map((item) => item.id); // nullish operator
+  const pathsWithParams = ids.map((id) => ({ params: { charId: id } }));
+
+  return {
+    paths: pathsWithParams,
+    fallback: true,
+  };
+}
