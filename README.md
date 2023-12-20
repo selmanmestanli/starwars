@@ -18,9 +18,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## User Journey
 
-'/' -> Homepage -> Click to the 'let"s start button'
-'/characters' -> List of Star Wars characters
-'/characters/:id' -> Character detail pages
+- '/' -> Homepage -> Click to the "lets start button",
+- '/characters' -> List of Star Wars characters,
+- '/characters/:id' -> Character detail pages,
 
 ## Techstack
 
